@@ -1,0 +1,22 @@
+{
+  "name": "Google search extension",
+  "version": "0.0.1",
+  "manifest_version": 2,
+  "description": "googleの検索結果画面にCollect機能を追加",
+  "permissions": [
+    "contextMenus",
+    "http://localhost:65116/",
+    "http://develop.uhkapsmii5.ap-northeast-1.elasticbeanstalk.com/"
+  ],
+  "content_scripts": [
+    {
+      "matches": ["https://www.google.com/search?*"],
+      "js": ["jquery-3.4.1.min.js","script.js"],
+	  "run_at": "document_start"
+    }
+  ],
+  "background": {
+    "scripts": [ "event.js","jquery-3.4.1.min.js" ],
+    "persistent": false
+  }
+}
